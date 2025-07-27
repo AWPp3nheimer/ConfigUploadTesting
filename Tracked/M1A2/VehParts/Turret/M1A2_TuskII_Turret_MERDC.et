@@ -1,0 +1,171 @@
+Turret : "{7DF1E9EF24B53402}Prefabs/Vehicles/Tracked/M1A2/VehParts/Turret/M1A2_TuskII_Turret.et" {
+ ID "51ACD0965653D003"
+ components {
+  MeshObject "{51ACD09C4E0B7D16}" {
+   Materials {
+    MaterialAssignClass "{65F112604C1CAE96}" {
+     SourceMaterial "m1a1_abrams"
+     AssignedMaterial "{2467F604BE51BC97}Assets/Vehicles/Tracked/M1A1/data/m1a1_abrams_MERDC.emat"
+    }
+    MaterialAssignClass "{65F112604C1CAEA7}" {
+     SourceMaterial "m1a1_abrams_decals"
+     AssignedMaterial "{4B3E9F4386280E28}Assets/Vehicles/Tracked/M1A1/data/m1a1_abrams_queen_decals.emat"
+    }
+   }
+  }
+  RHS_TurretDestructionComponent "{65F7038DAA8E942C}" {
+   m_sDestructionParticle "{3DFFA0F36BFA60D2}Particles/Vehicle/Vehicle_TurretDestruction.ptc"
+   m_DestructionParticlePosition PointInfo "{65F7038E5554BA2E}" {
+    PivotID "v_turret_01"
+    Offset 0 0.8394 0
+   }
+  }
+  SCR_DamageManagerComponent "{51ACD09C524A7924}" {
+   "Additional hit zones" {
+    SCR_FlammableHitZone Turret {
+     MaxHealth 1
+     DamageReduction 0
+     DamageThreshold 0
+     m_aDamagePassRules {
+      SCR_DamagePassRule "{60AAF83A13B1AFB5}" {
+       m_eOutputDamageType TRUE
+      }
+     }
+     m_eHitZoneGroup TURRET
+    }
+    SCR_HitZone Traverse {
+     ColliderNames {
+      "UTM_A2turret"
+     }
+     BaseDamageMultiplier 1
+     MaxHealth 2000
+     DamageReduction 400
+     DamageThreshold 8
+     "Collision multiplier" 1
+     "Melee multiplier" 0.01
+     "Kinetic multiplier" 3
+     "Fragmentation multiplier" 0
+     "Incendiary multiplier" 0.33
+     "DamageState threshold" {
+      0.7 0.4 0.2
+     }
+     m_aDamagePassRules {
+      SCR_DamagePassRule "{60AAF83A13B1AFB5}" {
+      }
+     }
+    }
+   }
+  }
+  SlotManagerComponent "{5E182107FF135160}" {
+   Slots {
+    RegisteringComponentSlotInfo Commander {
+     Prefab "{392F58341CD41633}Prefabs/Vehicles/Tracked/M1A2/VehParts/Turret/M1A2_Commander_Turret.et"
+    }
+    EntitySlotInfo Commander_sight {
+     Prefab "{24DE1AF455E97C1D}Prefabs/Vehicles/Tracked/M1A2/VehParts/CommanderSight/M1A2_CommanderSight_MERDC.et"
+    }
+    RegisteringComponentSlotInfo BasketExtention {
+     Prefab "{B21B803A22ED33F7}Prefabs/Vehicles/Tracked/M1A2/VehParts/M1A2_BasketExtention_MERDC.et"
+    }
+    RegisteringComponentSlotInfo ARAT {
+     Prefab "{1547181F6A3901C9}Prefabs/Vehicles/Tracked/M1A2/VehParts/ERA/M1A2_Turret_TuskSupports_MERDC.et"
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate "{C7D4EF0049EDA7D3}Prefabs/Weapons/Cannons/Cannon_M256/Cannon_M256_M1A2_MERDC.et"
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   ActionContexts {
+    UserActionContext "{65F7038E41C02147}" {
+     ContextName "Repair_Turret"
+     Position PointInfo "{65F340B0FFCAFDF0}" {
+      PivotID "v_turret_01"
+      Offset 0 0.8725 -1.9204
+     }
+     Height 0
+    }
+   }
+   additionalActions {
+    SCR_RepairAtSupportStationAction "{65F7038E7DB7D99D}" {
+     ParentContextList {
+      "Repair_Turret"
+     }
+     UIInfo SCR_ActionUIInfo "{65F340B09588F99B}" {
+      Name "#AR-SupportStation_Repair_ActionName"
+      m_sIconName "repair"
+     }
+     Duration -5
+     PerformPerFrame 1
+     "Sort Priority" -90
+     m_bLowerWeaponOnUse 1
+     m_eShownInVehicleState NOT_IN_VEHICLE
+     m_sInvalidRangeActionReason "#AR-SupportStation_Repair_ActionInvalid_Needs_SupportStation_Emergency"
+     m_iGadgetAnimationCommand 1
+     m_DamageIntensityHolder SCR_DamageIntensityHolder "{65F340B085787361}" {
+      m_aDamageIntensityEntries {
+       SCR_DamageIntensityEntry "{65F7038EE9370D75}" {
+        m_eDamageIntensityType NO_DAMAGE
+        m_iOrder 0
+        m_UiInfo SCR_UIName "{5E20C7519026B27E}" {
+         Name "#AR-SupportStation_Repair_ActionInvalid_NoDamage"
+        }
+        m_fMaxValue 10
+        m_fMinValue 1
+       }
+       SCR_DamageIntensityEntry "{65F3408BB19065F2}" {
+        m_eDamageIntensityType LOW
+        m_iOrder 0
+        m_UiInfo SCR_UIName "{5E20C7519026B272}" {
+         Name "#AR-Vehicle_DamageInfo_Damage_Low"
+        }
+        m_fMaxValue 1
+        m_fMinValue 0.75
+       }
+       SCR_DamageIntensityEntry "{65F3408BB1C8A55C}" {
+        m_eDamageIntensityType MEDIUM
+        m_iOrder 0
+        m_UiInfo SCR_UIName "{5E20C7519026B275}" {
+         Name "#AR-Vehicle_DamageInfo_Damage_Medium"
+        }
+        m_fMaxValue 0.75
+        m_fMinValue 0.3
+       }
+       SCR_DamageIntensityEntry "{65F3408BB1E7A3CE}" {
+        m_eDamageIntensityType HIGH
+        m_iOrder 0
+        m_UiInfo SCR_UIName "{5E20C7519026B248}" {
+         Name "#AR-Vehicle_DamageInfo_Damage_High"
+        }
+        m_fMaxValue 0.3
+        m_fMinValue 0.1
+       }
+       SCR_DamageIntensityEntry "{65F3408BB11F1803}" {
+        m_eDamageIntensityType CRITICAL
+        m_iOrder 0
+        m_UiInfo SCR_UIName "{5E20C7519026B24A}" {
+         Name "#AR-Vehicle_DamageInfo_Damage_Critical"
+        }
+        m_fMaxValue 0.1
+        m_fMinValue 0
+       }
+      }
+     }
+     m_aHitZoneGroups {
+      80
+     }
+     m_HitZoneGroupNames SCR_HitZoneGroupNameHolder "{65F340B08F6DC03A}" {
+      m_aHitZoneGroupNames {
+       SCR_VehicleHitZoneGroupName "{65F3408BA3F49182}" {
+        m_sHitZoneGroupName "#AR-Vehicle_HitZoneGroup_Turret"
+        m_eVehicleHitZoneGroup TURRET
+       }
+      }
+     }
+     m_bAlwaysRepairAllHitZones 1
+    }
+   }
+  }
+ }
+ coords 138.301 1 1454.107
+}

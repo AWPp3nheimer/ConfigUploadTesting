@@ -1,0 +1,16 @@
+GenericEntity : "{242B8CD019EE052D}Prefabs/Vehicles/Tracked/T14/VehParts/Era/era_turret/t14_era_turret_R_L_T.et" {
+ ID "5498A197BD32DBFD"
+ components {
+  MeshObject "{4B42E716914465B9}" {
+   Materials {
+    MaterialAssignClass "{65F3409EAE633CA5}" {
+     SourceMaterial "turret"
+     AssignedMaterial "{8B330F8A2DE4E5E7}Assets/Vehicles/Tracked/T14/data/camo1/camo1_turret.emat"
+    }
+   }
+  }
+  SCR_VehicleDamageManagerComponent "{3EBB276D48AFFF41}" {
+   Enabled 0
+  }
+ }
+}
