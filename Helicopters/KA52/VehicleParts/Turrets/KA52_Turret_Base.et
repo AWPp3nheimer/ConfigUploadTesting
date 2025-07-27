@@ -1,0 +1,12 @@
+Turret : "{4D399F4C1D31F917}Prefabs/Vehicles/Helicopters/Core/VehParts/Turret/Helicopter_Turret_Base.et" {
+ ID "51ACD0965653D003"
+ components {
+  TurretComponent "{6292FABB53F6B6A9}" {
+   components {
+    RHS_VehicleNightVisionComponent "{65074E35891E282F}" {
+     m_bUseThermal 1
+    }
+   }
+  }
+ }
+}
