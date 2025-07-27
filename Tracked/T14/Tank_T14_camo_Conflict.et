@@ -1,0 +1,79 @@
+RHS_Tank : "{9057DDA3E3FAA03B}Prefabs/Vehicles/Tracked/T14/Tank_T14_camo.et" {
+ ID "5CDE8068D49AAEBB"
+ components {
+  SCR_BaseCompartmentManagerComponent "{20FB66C5DCB8DF72}" {
+   DoorInfoList {
+    CompartmentDoorInfo "{65027749CC26471D}" {
+     OpenDoorAction SCR_OpenVehicleDoorUserAction "{65029174E89E2CD6}" {
+      UIInfo SCR_ActionUIInfo "{650517B63B620AFD}" {
+       m_sIconName ""
+      }
+     }
+     CloseDoorAction RHS_CloseFromOutsideVehicleDoorUserAction "{65029174EBAF7AA8}" {
+      UIInfo SCR_ActionUIInfo "{650517B27A3174CB}" {
+       m_sIconName ""
+      }
+     }
+     ExitPositionInfo PointInfo "{650339871FE40A7F}" {
+      PivotID "Commander_Idle"
+      Offset 0 0 0
+     }
+     PortalPositionInfo PointInfo "{65F340995AABB0F5}" {
+      Offset 0 0 0.2
+     }
+     FakeDoor 1
+    }
+   }
+   CompartmentSlots {
+    PilotCompartmentSlot PilotCompartment {
+     CompartmentAction SCR_GetInUserAction "{5086DB209BDE8253}" {
+     }
+     SwitchSeatAction SCR_SwitchSeatAction "{509D56667885A8DC}" {
+     }
+    }
+   }
+  }
+  SCR_EditableVehicleComponent "{50DEB7C26B5EB312}" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    m_sFaction "USSR"
+    m_aAutoLabels {
+     122 54 10
+    }
+    m_EntityBudgetCost {
+     SCR_EntityBudgetValue "{5EDC86E4AF8908B6}" {
+      m_Value 5000
+     }
+     SCR_EntityBudgetValue "{6576064124292903}" {
+      m_BudgetType RANK_MAJOR
+      m_Value 6
+     }
+    }
+   }
+  }
+  SCR_VehicleDamageManagerComponent "{141326E9FD94FE40}" {
+   "Additional hit zones" {
+    SCR_FlammableHitZone Hull {
+    }
+   }
+  }
+  SlotManagerComponent "{55BCE45E438E4CFF}" {
+   Slots {
+    RegisteringComponentSlotInfo Turret {
+     Prefab "{C7C3E9F87C44D9FA}Prefabs/Vehicles/Tracked/T14/VehParts/Turret/T14_Turret_Camo.et"
+    }
+   }
+  }
+  ActionsManagerComponent "{C97BE5489221AE18}" {
+   ActionContexts {
+    UserActionContext "{5CDE8068D499BB18}" {
+    }
+    UserActionContext "{5CE63AFBCA199A81}" {
+    }
+   }
+   additionalActions {
+    SCR_RepairAtSupportStationAction "{5B02B547E8F16AF2}" : "{BCE2920FF24EE251}Configs/Actions/SupportStationActions/Repair/DriveTrain/Repair_DriveTrain.conf" {
+    }
+   }
+  }
+ }
+}
