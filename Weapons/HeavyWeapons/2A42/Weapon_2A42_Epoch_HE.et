@@ -1,0 +1,15 @@
+GenericEntity : "{EDCEA5D6AFB0C7EA}Prefabs/Weapons/HeavyWeapons/2A42/Weapon_2A42_Epoch.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{5C62B42782DC2BB9}" {
+     MagazineWell MagazineWell2A42HE "{5C62B4242022051C}" {
+     }
+     ReloadDuration 31
+     MagazineTemplate "{479FDB5EDD601394}Prefabs/Weapons/Magazines/2A42/Box_30mm_2A42_HE_340rnd.et"
+    }
+   }
+  }
+ }
+}
