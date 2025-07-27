@@ -1,0 +1,45 @@
+Vehicle : "{3CFCB80B822033CF}Prefabs/Vehicles/Wheeled/K17/APC_K17_Epoch_camoExpo.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  SCR_EditableVehicleComponent "{50DEB7C26B5EB312}" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    m_sFaction "USSR"
+    m_aAutoLabels {
+     10 122 53 3
+    }
+    m_EntityBudgetCost {
+     SCR_EntityBudgetValue "{5EDC86E4AF8908B6}" {
+      m_Value 4000
+     }
+     SCR_EntityBudgetValue "{650E8E075C071980}" {
+      m_BudgetType RANK_CAPTAIN
+      m_Value 5
+     }
+    }
+   }
+  }
+  SCR_UniversalInventoryStorageComponent "{5CE26149257047CD}" {
+   MultiSlots {
+    MultiSlotConfiguration "{65EF35655B2E9881}" {
+     SlotTemplate InventoryStorageSlot Box_30mm_2A42_APFSDS_160rnd {
+      Prefab "{988E7C4F812130FA}Prefabs/Weapons/Magazines/2A42/Box_30mm_2A42_APFSDS_160rnd.et"
+     }
+     NumSlots 2
+    }
+    MultiSlotConfiguration "{65EF356558938C94}" {
+     SlotTemplate InventoryStorageSlot Box_30mm_2A42_HE_340rnd {
+      Prefab "{479FDB5EDD601394}Prefabs/Weapons/Magazines/2A42/Box_30mm_2A42_HE_340rnd.et"
+     }
+     NumSlots 2
+    }
+   }
+  }
+  SlotManagerComponent "{55BCE45E438E4CFF}" {
+   Slots {
+    RegisteringComponentSlotInfo Turret {
+     Prefab "{CFDD5F417A759486}Prefabs/Vehicles/Wheeled/K17/Turret_K17_Epoch_camo_expo.et"
+    }
+   }
+  }
+ }
+}

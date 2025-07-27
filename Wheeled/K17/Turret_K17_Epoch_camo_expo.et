@@ -1,0 +1,53 @@
+Turret : "{AB12F630BD71DBB1}Prefabs/Vehicles/Wheeled/K17/Turret_K17_Epoch.et" {
+ ID "51ACD0965653D003"
+ components {
+  MeshObject "{51ACD09C4E0B7D16}" {
+   Materials {
+    MaterialAssignClass "{65EF3564C7BD8E46}" {
+     SourceMaterial "Hull"
+     AssignedMaterial "{BA9960BE0FD033F4}Assets/Vehicles/Wheeled/K17bumerang/Data/camo_expo/Hull_camoExpo.emat"
+    }
+    MaterialAssignClass "{65EF3564C7BD8E57}" {
+     SourceMaterial "Turret_Epoch"
+     AssignedMaterial "{6699BA20E737CFD8}Assets/Vehicles/Wheeled/K17bumerang/Data/camo_expo/Turret_Epoch_camoExpo.emat"
+    }
+    MaterialAssignClass "{65EF3564C7BD8E6E}" {
+     SourceMaterial "KaZ"
+     AssignedMaterial "{A033820A297D2EB4}Assets/Vehicles/Wheeled/K17bumerang/Data/camo_expo/KaZ_camoExpo.emat"
+    }
+   }
+  }
+  RHS_TurretDestructionComponent "{607C7558E4A8EC70}" {
+   m_aMaterialsRemap {
+    RHS_MaterialRemapContainer "{65EF3564C7BD8E61}" {
+     m_sMaterialName "Hull"
+     m_sMaterialPath "{BA9960BE0FD033F4}Assets/Vehicles/Wheeled/K17bumerang/Data/camo_expo/Hull_camoExpo.emat"
+    }
+    RHS_MaterialRemapContainer "{65EF3564C7BD8E7F}" {
+     m_sMaterialName "Turret_Epoch"
+     m_sMaterialPath "{6699BA20E737CFD8}Assets/Vehicles/Wheeled/K17bumerang/Data/camo_expo/Turret_Epoch_camoExpo.emat"
+    }
+    RHS_MaterialRemapContainer "{65EF3564C7BD8E7C}" {
+     m_sMaterialName "KaZ"
+     m_sMaterialPath "{A033820A297D2EB4}Assets/Vehicles/Wheeled/K17bumerang/Data/camo_expo/KaZ_camoExpo.emat"
+    }
+   }
+  }
+  SlotManagerComponent "{5D12F938A553D8AF}" {
+   Slots {
+    RegisteringComponentSlotInfo Comandante {
+     Prefab "{79B99B6AA04F1B68}Prefabs/Vehicles/Wheeled/K17/Turret_K17_Commander_camoExpo.et"
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate "{69414735C8C58333}Prefabs/Weapons/HeavyWeapons/2A42/Weapon_2A42_Epoch.et"
+  }
+  WeaponSlotComponent "{5C8290EAF3252104}" {
+   WeaponTemplate "{195E54CD5611CDA6}Prefabs/Weapons/HeavyWeapons/2A42/Weapon_2A42_Epoch_HE.et"
+  }
+  WeaponSlotComponent "{5D14238EEFA282EE}" {
+   WeaponTemplate "{C7A6DDF5D49201EB}Prefabs/Weapons/HeavyWeapons/9M133/Weapon_9M133_Epoch_camoExpo.et"
+  }
+ }
+}
